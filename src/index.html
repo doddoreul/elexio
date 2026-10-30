@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Local editor of domestic single-line electrical diagrams for design and audit.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; script-src 'self'">
   <title>Elexio — schéma unifilaire domestique</title>
   <link rel="stylesheet" href="styles.css">
@@ -19,7 +20,7 @@
     <span class="spacer"></span>
     <button id="btn-export" title="Exporter le schéma en JSON">Exporter…</button>
     <button id="btn-pdf" title="Exporter le schéma en PDF">PDF…</button>
-    <select id="lang-select" class="recents" title="Langue / Language / Taal">
+    <select id="lang-select" class="recents" title="Langue / Language / Taal" aria-label="Langue">
       <option value="fr">FR</option>
       <option value="nl">NL</option>
       <option value="en">EN</option>
@@ -118,7 +119,7 @@
 
         <fieldset class="wide">
           <legend>Remarques</legend>
-          <textarea data-info="remarques" rows="4" placeholder="Particularités de l'installation, contraintes de chantier…"></textarea>
+          <textarea data-info="remarques" rows="4" placeholder="Remarques du chantier." aria-label="Remarques"></textarea>
         </fieldset>
       </div>
     </section>
@@ -131,13 +132,13 @@
           <div id="palette-groups"></div>
           <div id="anchor-menu" class="anchor-menu" hidden>
             <div class="anchor-menu-head">Ajouter sur ce point d’ancrage</div>
-            <input class="anchor-search" type="search" placeholder="Rechercher un élément…" autocomplete="off">
+            <input class="anchor-search" type="search" placeholder="Rechercher un élément…" autocomplete="off" aria-label="Rechercher">
             <div class="anchor-menu-list"></div>
             <p class="hint">Favoris, ou recherche (Entrée = premier disponible). Grisé = impossible ici. Échap ou clic ailleurs pour annuler.</p>
           </div>
           <hr>
           <h3>Schéma JSON</h3>
-          <textarea id="schema-json" rows="12" spellcheck="false"></textarea>
+          <textarea id="schema-json" rows="12" spellcheck="false" aria-label="Raw schema JSON"></textarea>
           <button id="btn-apply-json" class="primary">Appliquer</button>
           <p class="hint">Cliquez un « + » d'ancrage puis un symbole (ou glissez un symbole). Le « + » au milieu d'un conducteur insère un node. <kbd>Suppr</kbd> supprime. <kbd>Échap</kbd> désélectionne. Molette = zoom, clic sur le fond = déplacer.</p>
           <div class="zoom-row">
@@ -362,7 +363,7 @@
       <form method="dialog" id="plan-dialog-form">
         <h3 id="plan-dialog-title"></h3>
         <label class="plan-field"><span id="plan-dialog-label"></span>
-          <input id="plan-dialog-input" type="text" autocomplete="off">
+          <input id="plan-dialog-input" type="text" autocomplete="off" aria-label="Valeur de dialogue">
         </label>
         <menu class="prop-actions">
           <button type="submit" value="cancel" formnovalidate>Annuler</button>
