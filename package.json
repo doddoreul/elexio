@@ -28,7 +28,10 @@
       "preload.js",
       "print-assets.js",
       "package.json",
-      "src/**/*"
+      "src/**/*",
+      "!src/**/*.map",
+      "!**/*.log",
+      "!**/*.md"
     ],
     "win": {
       "icon": "build/icon.ico",
@@ -56,7 +59,13 @@
     },
     "portable": {
       "artifactName": "Elexio-portable-${version}.exe"
-    }
+    },
+    "compression": "maximum",
+    "electronLanguages": [
+      "fr",
+      "en",
+      "nl"
+    ]
   },
   "devDependencies": {
     "electron": "^44.7.0",
