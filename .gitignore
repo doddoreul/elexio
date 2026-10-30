@@ -23,3 +23,9 @@ test-render.html
 .vscode/
 .idea/
 *.swp
+
+# Agent impeccable (artefacts locaux)
+.github/agents/
+.github/hooks/
+.github/skills/
+
